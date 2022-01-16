@@ -249,17 +249,17 @@ w_warn()
         echo "------------------------------------------------------"
     fi
 
-    if test "${W_OPT_UNATTENDED}"; then
-        _W_timeout="--timeout 5"
-    fi
+#    if test "${W_OPT_UNATTENDED}"; then
+#        _W_timeout="--timeout 5"
+#    fi
 
-    case ${WINETRICKS_GUI} in
-        zenity) ${WINETRICKS_GUI} "${_W_timeout}" --error --width=400 --title=winetricks --text="$(echo "$@" | sed 's,\\\\,\\\\\\\\,g')";;
-        kdialog) ${WINETRICKS_GUI} --title winetricks --error "$@" ;;
-        none) ;;
-    esac
+#    case ${WINETRICKS_GUI} in
+#        zenity) ${WINETRICKS_GUI} "${_W_timeout}" --error --width=400 --title=winetricks --text="$(echo "$@" | sed 's,\\\\,\\\\\\\\,g')";;
+#        kdialog) ${WINETRICKS_GUI} --title winetricks --error "$@" ;;
+#        none) ;;
+#    esac
 
-    unset _W_timeout
+#    unset _W_timeout
 }
 
 # Display warning message to stderr (since it is called inside redirected code)
